@@ -1,0 +1,51 @@
+body {
+    height: 100vh;
+}
+
+main {
+    height: 70%;
+    display: flex; 
+}
+
+.custom-jumbotron {
+    background-image: linear-gradient(to right, lightblue, darkblue);
+    text-decoration-color: darkgray;
+    text-align: center;
+    height: 30%;
+    padding-top: 50px;
+}
+
+.columnleft {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+}
+
+.columnright {
+    display: flex; 
+    flex-direction: column;
+    flex-basis: 80%;
+}
+
+.searchsection {
+    border-bottom: 2px solid black;
+    flex-basis: 30%;
+}
+
+.form-group {
+    display: flex;
+}
+
+.cityhistory {
+    flex-basis: 70%;
+}
+
+.citybox {
+    border: 1px solid pink;
+    flex-basis: 60%;
+}
+
+.forecast {
+    border: 1px solid yellow;
+    flex-basis: 40%;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap - look at 5-17 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!-- header (weather dashboard)-->
+    <header class="jumbotron-fluid custom-jumbotron">
+        <div class="container">
+            <h1>Weather Dashboard</h1></div>
+    </header>
+        
+    <!-- left column ---------------------------->
+    <main>
+        <div class="columnleft">
+            <div class="searchsection">
+                <span>Search for a City:</span>
+                <!-- City Search -->
+                <form id="city-form">
+                <div class="form-group">
+                    <input type="text" id="city-input" placeholder="San Diego" class="form-control"/>
+                </div>
+                <button class ="btn btn-block btn-primary bg-gradient">Search</button>
+                </form> 
+        </div>
+
+            <!-- Left Column City Search History -->
+            <div class="cityhistory">
+                <!-- Add for loop to populate ten buttons based on search history -->
+            </div>
+        </div>
+        
+    <!-- right column ---------------------------->
+        <div class="columnright">
+            <div class="citybox">
+                <display>city-input</display><div>  </div><br>
+                <div>Temp:</div><br>
+                <div>Wind:</div><br>
+                <div>Humidity:</div><br>
+                <div>UV Index:</div><br>
+            </div>
+            <div class="forecast"></div>
+        </div>
+    </main>
+        <section>"city box"</section>
+    <!-- form: label (search for a city) -->
+    <!-- input box -->
+    <!-- button -->
+    <!-- last ten -->
+    <!-- buttons for past searches -->
+
+
+    <!-- right column --------------------------->
+    <!-- container for city, date, temp wind, humidy, uv index -->
+    <!-- color of uv index -->
+    <!-- container for five day forcast (loop) -->
+    <!-- each card will have date, icon for weather, temp, wind, humidity-->
+    
+    <script src="./js/main.js"></script>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</html>
