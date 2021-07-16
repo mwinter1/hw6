@@ -38,6 +38,8 @@ main {
 
 .cityhistory {
     flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
 }
 
 .citybox {
@@ -48,4 +50,6 @@ main {
 .forecast {
     border: 1px solid yellow;
     flex-basis: 40%;
+    display: flex;
+    flex: 1;
 }

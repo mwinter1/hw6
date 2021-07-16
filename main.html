@@ -23,12 +23,10 @@
             <div class="searchsection">
                 <span>Search for a City:</span>
                 <!-- City Search -->
-                <form id="city-form">
                 <div class="form-group">
                     <input type="text" id="city-input" placeholder="San Diego" class="form-control"/>
                 </div>
-                <button class ="btn btn-block btn-primary bg-gradient">Search</button>
-                </form> 
+                <button id="searchButton" class ="btn btn-block btn-primary bg-gradient">Search</button>
         </div>
 
             <!-- Left Column City Search History -->
@@ -41,15 +39,56 @@
         <div class="columnright">
             <div class="citybox">
                 <display>city-input</display><div>  </div><br>
-                <div>Temp:</div><br>
+                <div>Temp:<span id="tempAPI"></span></div><br>
                 <div>Wind:</div><br>
                 <div>Humidity:</div><br>
                 <div>UV Index:</div><br>
             </div>
-            <div class="forecast"></div>
+            <h1>5 Day Forecast:</h1>
+            <div class="forecast">
+                <!-- <h1>5 Day Forecast:</h1> -->
+                <!-- Date Cards -->
+                <!-- Day 1 -->
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <h3 class="card-header bg-secondary bg-gradient">
+                            Day 1
+                        </h3>
+                        <!-- Add Weather Image -->
+                        <div class="card-body">
+                            <p class="card-text">
+                                <li>Temp:</li>
+                                <li>Wind:</li>
+                                <li>Humidity:</li>
+                                <li>UV Index:</li>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Day 2 -->
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <h3 class="card-header bg-secondary bg-gradient">
+                            Day 2
+                        </h3>
+                        <!-- Add Weather Image -->
+                        <div class="card-body">
+                            <p class="card-text">
+                                <li>Temp:</li>
+                                <li>Wind:</li>
+                                <li>Humidity:</li>
+                                <li>UV Index:</li>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
         </div>
     </main>
-        <section>"city box"</section>
     <!-- form: label (search for a city) -->
     <!-- input box -->
     <!-- button -->
@@ -62,12 +101,11 @@
     <!-- color of uv index -->
     <!-- container for five day forcast (loop) -->
     <!-- each card will have date, icon for weather, temp, wind, humidity-->
-    
-    <script src="./js/main.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+<script src="./assets/js/script.js"></script>    
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </html>
