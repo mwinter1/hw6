@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Weather App">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <title>Weather Dashboard</title>
 </head>
@@ -12,8 +14,9 @@
 <body>
     <!-- header (weather dashboard)-->
     <header class="jumbotron-fluid custom-jumbotron">
-        <div class="container">
-            <h1>Weather Dashboard</h1></div>
+        <div class="container-fluid">
+            <h1>Weather Dashboard</h1>
+        </div>
     </header>
         
     <!-- left column ---------------------------->
@@ -30,14 +33,13 @@
 
             <!-- Left Column City Search History -->
             <div class="cityhistory">
-                <!-- Add for loop to populate ten buttons based on search history -->
             </div>
         </div>
         
     <!-- right column ---------------------------->
         <div class="columnright">
             <div class="citybox">
-                <display>city-input</display><div>  </div><br>
+                <div>$("#city-input")</div><div></div><br>
                 <div>Temp:<span id="tempAPI"></span></div><br>
                 <div>Wind:</div><br>
                 <div>Humidity:</div><br>
@@ -81,15 +83,53 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Day 3 -->
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <h3 class="card-header bg-secondary bg-gradient">
+                            Day 3
+                        </h3>
+                        <!-- Add Weather Image -->
+                        <div class="card-body">
+                            <p class="card-text">
+                                <li>Temp:</li>
+                                <li>Wind:</li>
+                                <li>Humidity:</li>
+                                <li>UV Index:</li>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Day 4 -->
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <h3 class="card-header bg-secondary bg-gradient">
+                            Day 4
+                        </h3>
+                        <!-- Add Weather Image -->
+                        <div class="card-body">
+                            <p class="card-text">
+                                <li>Temp:</li>
+                                <li>Wind:</li>
+                                <li>Humidity:</li>
+                                <li>UV Index:</li>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
 
 
             </div>
         </div>
     </main>
-<script src="./assets/js/script.js"></script>    
+    
+<!-- <script src="./assets/js/script.js"></script>    -->
+<script src="./assets/js/script.js"></script>   
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+
 </body>
-
-
 </html>

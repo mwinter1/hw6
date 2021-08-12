@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Weather App">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <header class="jumbotron-fluid custom-jumbotron">Weather Dashboard</header>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Search Bar -->
+            <div class="col-3">
+                <h3>Search for a City:</h3>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="city-input" placeholder="San Diego">
+                    <div class="input-group-append">
+                    <button class="btn btn-block btn-primary bg-gradient" type="button" id="searchButton">Search</button>
+                    </div>
+                </div>
+                <ul class="list-group city-history"></ul>
+            </div>
+            <!-- City Info and Forecast -->
+            <div class="col-9">
+                <div id="city"></div>
+                <div id="forecast"></div>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>
