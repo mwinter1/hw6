@@ -34,17 +34,17 @@ for (var i = 0; i < cityHistory.length; i++) {
 
 
 // Search API function
-function searchApi(cityInput) {
+function searchApi(x) {
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
+    url: "http://api.openweathermap.org/data/2.5/weather?q=" + x + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
     dataType: "json",
     success: function (data) {
         // create history link for this search
-        if (cityHistory.includes(cityInput) === false) {
-            cityHistory.push(cityInput);
+        if (cityHistory.includes(x) === false) {
+            cityHistory.push(x);
             localStorage.setItem("city-history", JSON.stringify(cityHistory));
-            makeRow(cityInput);
+            makeRow(x);
         }
 $("#city").empty();
     // create html content for current weather
@@ -70,20 +70,23 @@ $("#city").empty();
     card.append(cardBody);
     $("#city").append(card);
 
+    getForecast(x);
+
     // call follow-up api endpoints
     // getForecast(cityInput);
     // getUVIndex(data.coord.lat, data.coord.lon);
-}
+  }
 });
 }
 
 // Forecasting function
-function getForecast(cityInput) {
+function getForecast(y) {
   $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
+      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + y + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
       dataType: "json",
       success: function (data) {
+          console.log(data);
           // overwrite any existing content with title and empty row
           $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">");
 
@@ -92,16 +95,27 @@ function getForecast(cityInput) {
               // only look at forecasts around 3:00pm
               if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
                   // create html elements for a bootstrap card
-                  let col = $("<div>").addClass("col-md-2");
-                  let card = $("<div>").addClass("card bg-primary text-white");
-                  let body = $("<div>").addClass("card-body p-2");
-                  let title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
-                  let p1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp_max + " °F");
-                  let p2 = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
+                  let col = $("<div>");
+                  col.addClass("col-md-2");
+                  let card = $("<div>");
+                  card.addClass("card bg-primary text-white");
+                  let body = $("<div>");
+                  body.addClass("card-body p-2");
+                  let title = $("<h5>");
+                  title.addClass("card-title");
+                  title.text(new Date(data.list[i].dt_txt).toLocaleDateString());
+                  let p1 = $("<p>");
+                  p1.addClass("card-text");
+                  p1.text("Temp: " + data.list[i].main.temp_max + " °F");
+                  let p2 = $("<p>")
+                  p2.addClass("card-text");
+                  p2.text("Humidity: " + data.list[i].main.humidity + "%");
 
                   // merge together and put on page
-                  col.append(card.append(body.append(title, img, p1, p2)));
-                  $("#forecast.row").append(col);
+                  // col.append(card);
+                  // $("#forecast .row").append(col, body);
+                  col.append(card.append(body.append(title, p1, p2)));
+                  $("#forecast .row").append(col);
               }
           }
       }
