@@ -24,10 +24,6 @@ function makeRow(text) {
   $(".city-history").append(li);
 }
 
-// if (cityHistory.length > 0) {
-//      searchWeather(cityHistory[cityHistory.length - 1]);
-// }
-
 for (var i = 0; i < cityHistory.length; i++) {
      makeRow(cityHistory[i]);
 }
@@ -71,10 +67,7 @@ $("#city").empty();
     $("#city").append(card);
 
     getForecast(x);
-
-    // call follow-up api endpoints
-    // getForecast(cityInput);
-    // getUVIndex(data.coord.lat, data.coord.lon);
+    getUVIndex(data.coord.lat, data.coord.lon);
   }
 });
 }
@@ -86,11 +79,10 @@ function getForecast(y) {
       url: "http://api.openweathermap.org/data/2.5/forecast?q=" + y + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
       dataType: "json",
       success: function (data) {
-          console.log(data);
           // overwrite any existing content with title and empty row
           $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">");
 
-          // loop over all forecasts (by 3-hour increments)
+          // loop over all forecast
           for (var i = 0; i < data.list.length; i++) {
               // only look at forecasts around 3:00pm
               if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
@@ -111,9 +103,7 @@ function getForecast(y) {
                   p2.addClass("card-text");
                   p2.text("Humidity: " + data.list[i].main.humidity + "%");
 
-                  // merge together and put on page
-                  // col.append(card);
-                  // $("#forecast .row").append(col, body);
+                  // append components
                   col.append(card.append(body.append(title, p1, p2)));
                   $("#forecast .row").append(col);
               }
@@ -131,7 +121,7 @@ function getUVIndex(lat, lon) {
       success: function (data) {
           var uv = $("<p>").text("UV Index: ");
           var btn = $("<span>").addClass("btn btn-sm").text(data.value);
-
+          console.log(data);
           // change color depending on uv value
           if (data.value < 3) {
               btn.addClass("btn-success");
@@ -143,7 +133,7 @@ function getUVIndex(lat, lon) {
               btn.addClass("btn-danger");
           }
 
-          $("#today.card-body").append(uv.append(btn));
+          $("#today .card-body").append(uv.append(btn));
       }
   });
 }

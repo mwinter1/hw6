@@ -8,128 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <title>Weather Dashboard</title>
+    <title>Weather App</title>
 </head>
-
 <body>
-    <!-- header (weather dashboard)-->
-    <header class="jumbotron-fluid custom-jumbotron">
-        <div class="container-fluid">
-            <h1>Weather Dashboard</h1>
-        </div>
-    </header>
-        
-    <!-- left column ---------------------------->
-    <main>
-        <div class="columnleft">
-            <div class="searchsection">
-                <span>Search for a City:</span>
-                <!-- City Search -->
-                <div class="form-group">
-                    <input type="text" id="city-input" placeholder="San Diego" class="form-control"/>
+    <header class="jumbotron-fluid custom-jumbotron">Weather Dashboard</header>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Search Bar -->
+            <div class="col-3">
+                <h3>Search for a City:</h3>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="cityInput" placeholder="San Diego">
+                    <div class="input-group-append">
+                    <button class="btn btn-block btn-primary bg-gradient" type="button" id="searchButton">Search</button>
+                    </div>
                 </div>
-                <button id="searchButton" class ="btn btn-block btn-primary bg-gradient">Search</button>
-        </div>
-
-            <!-- Left Column City Search History -->
-            <div class="cityhistory">
+                <ul class="list-group city-history"></ul>
+            </div>
+            <!-- City Info and Forecast -->
+            <div class="col-9">
+                <div id="city"></div>
+                <div id="forecast"></div>
             </div>
         </div>
-        
-    <!-- right column ---------------------------->
-        <div class="columnright">
-            <div class="citybox">
-                <div>$("#city-input")</div><div></div><br>
-                <div>Temp:<span id="tempAPI"></span></div><br>
-                <div>Wind:</div><br>
-                <div>Humidity:</div><br>
-                <div>UV Index:</div><br>
-            </div>
-            <h1>5 Day Forecast:</h1>
-            <div class="forecast">
-                <!-- <h1>5 Day Forecast:</h1> -->
-                <!-- Date Cards -->
-                <!-- Day 1 -->
-                <div class="col-12 col-sm-6 col-lg-4 mb-3">
-                    <div class="card">
-                        <h3 class="card-header bg-secondary bg-gradient">
-                            Day 1
-                        </h3>
-                        <!-- Add Weather Image -->
-                        <div class="card-body">
-                            <p class="card-text">
-                                <li>Temp:</li>
-                                <li>Wind:</li>
-                                <li>Humidity:</li>
-                                <li>UV Index:</li>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Day 2 -->
-                <div class="col-12 col-sm-6 col-lg-4 mb-3">
-                    <div class="card">
-                        <h3 class="card-header bg-secondary bg-gradient">
-                            Day 2
-                        </h3>
-                        <!-- Add Weather Image -->
-                        <div class="card-body">
-                            <p class="card-text">
-                                <li>Temp:</li>
-                                <li>Wind:</li>
-                                <li>Humidity:</li>
-                                <li>UV Index:</li>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Day 3 -->
-                <div class="col-12 col-sm-6 col-lg-4 mb-3">
-                    <div class="card">
-                        <h3 class="card-header bg-secondary bg-gradient">
-                            Day 3
-                        </h3>
-                        <!-- Add Weather Image -->
-                        <div class="card-body">
-                            <p class="card-text">
-                                <li>Temp:</li>
-                                <li>Wind:</li>
-                                <li>Humidity:</li>
-                                <li>UV Index:</li>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Day 4 -->
-                <div class="col-12 col-sm-6 col-lg-4 mb-3">
-                    <div class="card">
-                        <h3 class="card-header bg-secondary bg-gradient">
-                            Day 4
-                        </h3>
-                        <!-- Add Weather Image -->
-                        <div class="card-body">
-                            <p class="card-text">
-                                <li>Temp:</li>
-                                <li>Wind:</li>
-                                <li>Humidity:</li>
-                                <li>UV Index:</li>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-    </main>
-    
-<!-- <script src="./assets/js/script.js"></script>    -->
-<script src="./assets/js/script.js"></script>   
-<script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script> 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
