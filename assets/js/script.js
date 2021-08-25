@@ -33,7 +33,7 @@ for (var i = 0; i < cityHistory.length; i++) {
 function searchApi(x) {
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/weather?q=" + x + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
+    url: "https://api.openweathermap.org/data/2.5/weather?q=" + x + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
     dataType: "json",
     success: function (data) {
         // create history link for this search
@@ -76,7 +76,7 @@ $("#city").empty();
 function getForecast(y) {
   $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + y + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + y + "&appid=8c8ca12845dfa5e4073bc72069d8d158",
       dataType: "json",
       success: function (data) {
           // overwrite any existing content with title and empty row
